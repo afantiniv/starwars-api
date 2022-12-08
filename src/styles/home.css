@@ -1,0 +1,13 @@
+body{
+    background-color: #fff;
+    background-image: url(https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg);
+}
+
+.logo img{
+    height: 40px;
+}
+
+.dropdown .btn{
+    background-color: #9e4f60;
+}
+
