@@ -41,8 +41,8 @@ export const Navbar = () => {
 								
 									{store.favorites ? (
 										store.favorites.map((elem, i) => (
-											<li className="d-flex justify-content-between"><a className="dropdown-item" key={i} id={++i} title={elem.item}>
-												{elem.item}
+											<li className="d-flex justify-content-between"><a className="dropdown-item" key={i} id={++i} title={elem.name}>
+												{elem.name}
 												</a>
 												<button className="badge bg-danger rounded-pill me-1" id={i} onClick={() => actions.removeFav(i)}>
 													X

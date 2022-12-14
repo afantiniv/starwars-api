@@ -8,9 +8,7 @@ const getState =({
 			people: [], 
 			character: [], 
 			planets: [], 
-			planet: [], 
-			starShips: [], 
-			starShip: [], 
+			planet: [],
 			favorites: []
 		},
 		/*actions:{
@@ -20,6 +18,7 @@ const getState =({
 				setStore({
 					...getStore(),
 					planets: data.results
+					const request = await fetch(`https://www.swapi.tech/api/people?page=1&limit=0`, settings)
 				})
 			}
 		}*/
@@ -33,7 +32,29 @@ const getState =({
 			removeFav: id => {
 				let value = document.getElementById(id).title
 				const store = getStore()
-				setStore({ favorites: store.favorites.filter(fav => fav.item !== value) })
+				setStore({ favorites: store.favorites.filter(fav => fav.name !== value) })
+			},
+
+			handleFav: data => {
+				const store = getStore()
+				//Busco el indice del fav para saber si existe
+				let favIndex = store.favorites.findIndex(
+					(fav) => fav.link == data.link
+				)
+				console.log(favIndex)
+				if (favIndex == -1){
+					//Si el fav no existe se agrega
+					setStore({
+						favorites: [...store.favorites, data ]
+					})
+				} else {
+					//Si el fav ya existe se elimina
+					//let newFav = [...store.favorites]
+					//newFav.splice(favIndex, 1)
+					//console.log(newFav)
+					//setStore({ favorites: [...store.favorites, newFav ] })
+					setStore({ favorites: store.favorites.filter(fav => fav.link !== data.link) })
+				}
 			},
 
 			getPeople: async () => {

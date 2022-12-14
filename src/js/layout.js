@@ -8,6 +8,7 @@ import { Films } from "./views/films.jsx";
 import { Species } from "./views/species.jsx";
 import { Characters } from "./views/characters.jsx";
 import { SinglePj } from "./views/singlePj.jsx";
+import { SinglePlanet } from "./views/singlePlanet.jsx";
 import injectContext from "./store/appContext.jsx";
 
 import { Navbar } from "./component/navbar.jsx";
@@ -29,6 +30,7 @@ const Layout = () => {
 						<Route path="/planets" element={<Planets />} />
 						<Route path="/films" element={<Films />} />
 						<Route path="/singlePj/:uid" element={<SinglePj />} />
+						<Route path="/singlePlanet/:uid" element={<SinglePlanet />} />
 						<Route path="/characters" element={<Characters />} />
 						<Route path="/species" element={<Species />} />
 						<Route path="*" element={<h1>Not found!</h1>} />

@@ -9,12 +9,12 @@ export const Home = () => {
 	const { store, actions } = useContext(Context)
 	const responsive = {
 		desktop: {
-		  breakpoint: { max: 3000, min: 1024 },
-		  items: 4,
-		  slidesToSlide: 4 // optional, default to 1.
+		  breakpoint: { max: 3000, min: 1500 },
+		  items: 6,
+		  slidesToSlide: 5 // optional, default to 1.
 		},
 		tablet: {
-		  breakpoint: { max: 1024, min: 464 },
+		  breakpoint: { max: 1500, min: 464 },
 		  items: 2,
 		  slidesToSlide: 2 // optional, default to 1.
 		},
@@ -28,12 +28,12 @@ export const Home = () => {
 		<div className="text-center mt-5">
 		<Carousel responsive={responsive}>
 			{store.planets.map((elem, index)=>(
-					<PlanetCard key={index} id={++index} planet={elem} />
+					<PlanetCard key={index} id={++index} type={"planet"} planet={elem} />
 					))}
 		</Carousel>
 		<Carousel responsive={responsive}>
 			{store.people.map((elem, index)=>(
-					<PjCard key={index} id={++index} character={elem} />
+					<PjCard key={index} id={++index} type={"people"} character={elem} />
 					))}
 		</Carousel>
 		</div>
