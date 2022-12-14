@@ -3,15 +3,15 @@ import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
 import "../../styles/card.css";
 
+function imgError(e){
+    console.log("Error: " + e.target.src)
+    e.target.src = "https://i.pinimg.com/originals/e8/63/92/e863927635dc1c5aba5663e8dd33efa0.jpg";
+}
+
 export const PjCard = (props) =>{
     const { store, actions } = useContext(Context)
 	const pjStore = store.character.filter(char => char.name == props.character.name)
 	useEffect(() => actions.charDescription(props.character.url), [])
-
-	function imgError(e){
-		console.log("Error: " + e.target.src)
-	}
-
 
     return(
         <div className="card ms-1 my-2" >
